@@ -1,11 +1,9 @@
 ################# imports  ################
-import os #biblioteca para manipular arquivos e pastas
+import os, sys #biblioteca para manipular arquivos e pastas
 import numpy as np
 from astropy.io import ascii, fits
 from astropy.table import Table
 import pandas as pd
-
-
 
 ################# lista todos os arquivos que tem no diretório indicado ################
 diretorio = '/media/new-drive/optical-data/DESzxcorr/FITS/64-stars-dr2'
@@ -15,10 +13,12 @@ for diretorio, subpastas, arquivos in os.walk(diretorio):
     for arquivo in arquivos:
         print(os.path.join(diretorio, arquivo))
 '''
-filename_list = [f for f in listdir(diretorio) if isfile(join(diretorio, f))]
+filename_list = [f for f in os.listdir(diretorio) if os.path.isfile(os.path.join(diretorio, f))]
+
+qnty_arquivos_lidos_por_intervalo = 1000
 
 #lista com o particionamento da leitura dos arquivos
-intervalos = list(np.arange(0, len(filename_list), 1000,dtype=int))
+intervalos = list(np.arange(0, len(filename_list), qnty_arquivos_lidos_por_intervalo,dtype=int))
 intervalos.append(len(filename_list))
 
 for w in range(len(intervalos)-1):
