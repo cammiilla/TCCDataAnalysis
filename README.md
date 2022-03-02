@@ -3,10 +3,15 @@
 This is the code repository with all the analisys developed for the monograph named "Quasar classification using the t-SNE algorithm". The sequence of the files is:
 
 step1_data_match.py - does a match with DES data and SLOAN data and results are divided into two samples.
+
 step2_tsne_analysis.ipynb - is where the tsne reduction occur, and it is separete by perplexity and number of iteration variation.
+
 step3_tsne_analysis_visualization.ipynb - with all the reduction, here is the grafich visualisation.
+
 step4_test_sample_analysis.py - here is where the best tsne distribution is applied to the test sample using the K Dimensional Tree (KD Tree) algorithm.
+
 step5_data_classification.ipynb - here is where the data is classified in quasars and others. 
+
 step6_data_visualization.ipynb - this is where the results of the classification are displayed graphically.
 
 
